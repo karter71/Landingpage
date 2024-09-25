@@ -1650,66 +1650,28 @@
       check.remove();
     }
   }());
-      <script type="text/javascript"> 
-  // List of restricted IPs 
-  const restrictedIPs = ["123.456.78.90", "111.222.333.444"]; // Add restricted IPs here 
- 
-  // Fetch the user's IP address using an external API 
-  fetch('https://ipinfo.io/json?token=your_token_here')  // Replace with your IP info token 
-    .then(response => response.json()) 
-    .then(data => { 
-      const userIP = data.ip; 
-      console.log("User's IP: " + userIP); 
- 
-      // Check if the IP is in the restricted list 
-      if (!restrictedIPs.includes(userIP)) { 
-        // If the user's IP is not restricted, redirect after 10 seconds 
-        setTimeout(function() { 
-          window.location.href = "https://example.com"; // Replace with your target URL 
-        }, 10000); // 10000 milliseconds = 10 seconds 
-      } else { 
-        console.log("User is from a restricted IP address, no redirect."); 
-      } 
-    }) 
-    .catch(error => { 
-      console.error("Error fetching IP information: ", error); 
-    }); 
-</script> 
- 
-<script type="text/javascript"> 
-  window.geolocation = 'GB'; // Set geolocation 
-</script> 
- 
-<script type="text/javascript"> 
-  var _sf_startpt = (new Date()).getTime(); // Set start point for analytics or logging 
-</script> 
- 
-<script type="text/javascript"> 
-  // Register the service worker if supported 
-  if ('serviceWorker' in navigator) { 
-    navigator.serviceWorker.register('/sw.js') 
-      .catch(() => { 
-        // Fail silently 
-      }); 
-  } 
-</script> 
- 
-<script type="text/javascript"> 
-  // Prevent default install prompt behavior 
-  window.addEventListener('beforeinstallprompt', e => { 
-    e.preventDefault(); 
-  }); 
-</script>
-</script><script type="text/javascript">
-  window.addEventListener('beforeinstallprompt', e => {
-    e.preventDefault();
-  })
-</script></body>
-</html>
+     <script>
+const restrictedIPs = ["123.456.78.90", "111.222.333.444"]; // Add restricted IPs here
 
-</script><script type="text/javascript">
-  window.addEventListener('beforeinstallprompt', e => {
-    e.preventDefault();
-  })
+// Fetch the user's IP address using an external API
+fetch('https://ipinfo.io/json?token=your_token_here')  // Replace with your IP info token
+.then(response => response.json())
+.then(data => {
+const userIP = data.ip;
+console.log("User's IP: " + userIP);
+
+// Check if the IP is in the restricted list
+if (!restrictedIPs.includes(userIP)) {
+// If the user's IP is not restricted, redirect after 10 seconds
+setTimeout(function() {
+window.location.href = "https://example.com"; // Replace with your target URL
+}, 10000); // 10000 milliseconds = 10 seconds
+} else {
+console.log("User is from a restricted IP address, no redirect.");
+}
+})
+.catch(error => {
+console.error("Error fetching IP information: ", error);
+});
 </script></body>
 </html>
